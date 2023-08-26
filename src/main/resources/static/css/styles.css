@@ -11,3 +11,13 @@
     object-fit: cover;
     filter: brightness(0.6);
 }
+#Intro{
+    text-align: justify;
+}
+
+#lobbyImg{
+    display: -webkit-box;
+    margin-left: 115px;
+    height: 670px;
+    width: 447px;
+}
