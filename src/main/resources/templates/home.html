@@ -39,102 +39,50 @@
     </div>
 </nav>
 
-<!-- Jumbotron -->
-<div id="mainHeader" class="bg-image p-5 text-center shadow-1-strong rounded mb-5 text-white">
-    <h1 class="mb-3 h2">Find Your Dream Job</h1>
-    <p>We connect talented individuals with their ideal opportunities</p>
-    <button class="btn btn-light btn-lg">Get Started </button>
+<div id="hero-carousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+
+    <div class="carousel-inner">
+        <div class="carousel-item active c-item">
+            <img src="https://images.unsplash.com/photo-1613079900861-0b9ecc4e1b93?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1310&q=80" class="d-block w-100 c-img" alt="Slide 1">
+            <div class="carousel-caption top-0 mt-4">
+                <p class="mt-5 fs-3 text-uppercase">Discover Amazing Oportunities </p>
+                <p class="display-1 fw-bolder text-capitalize">Find Your Ideal Job</p>
+                <button class="btn btn-primary px-4 py-2 fs-5 mt-5">Get Started</button>
+            </div>
+        </div>
+        <div class="carousel-item c-item">
+            <img src="https://images.unsplash.com/photo-1522509261741-d299c5cb6651?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" class="d-block w-100 c-img" alt="Slide 2">
+            <div class="carousel-caption top-0 mt-4">
+                <p class="text-uppercase fs-3 mt-5"> Elevate Your Career</p>
+                <p class="display-1 fw-bolder ">Get Expert Advice</p>
+                <button class="btn btn-primary px-4 py-2 fs-5 mt-5" data-bs-toggle="modal"
+                        data-bs-target="#booking-modal">Get Started</button>
+            </div>
+        </div>
+        <div class="carousel-item c-item">
+            <img src="https://images.unsplash.com/photo-1504556106489-6d450910aeb3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1490&q=80" class="d-block w-100 c-img" alt="Slide 3">
+            <div class="carousel-caption top-0 mt-4">
+                <p class="text-uppercase fs-3 mt-5">Begin Your Ascent</p>
+                <p class="display-1 fw-bolder">Live Your Dream Life</p>
+                <button class="btn btn-primary px-4 py-2 fs-5 mt-5" data-bs-toggle="modal"
+                        data-bs-target="#booking-modal">Get Started</button>
+            </div>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#hero-carousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#hero-carousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
 </div>
-<!-- Jumbotron -->
-
-<section id="services" class="bg-light py-5">
-    <div class="container">
-        <h2 class="text-center mb-4">Our Services</h2>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card">
-                    <!--img src="service1.jpg" alt="Service 1" class="card-img-top"> -->
-                    <div class="card-body">
-                        <h5 class="card-title">Job Search</h5>
-                        <p class="card-text">Get personalized job recommendations and guidance in finding the perfect
-                            job.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <!--img src="service1.jpg" alt="Service 1" class="card-img-top"> -->
-                    <div class="card-body">
-                        <h5 class="card-title">Resume Building</h5>
-                        <p class="card-text">Get a professional resume that stands out and increases your chances of
-                            getting hired.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <!--img src="service1.jpg" alt="Service 1" class="card-img-top"> -->
-                    <div class="card-body">
-                        <h5 class="card-title">Interview Preparation</h5>
-                        <p class="card-text">Prepare for interviews with confidence and improve chances of landing your
-                            dream job.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="testimonials py-5">
-    <div class="container">
-        <h2 class="text-center mb-5">Client Testimonials</h2>
-        <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active text-center">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-15">
-                            <div class="card">
-                                <div class="card-body">
-                                    <blockquote class="blockquote mb-0">
-                                        <p>Thanks to The Jobs, I was able to land my dream job within weeks. Highly
-                                            recommended.</p>
-                                        <footer class="blockquote-footer">Melissa Bandara(Web Developer)</footer>
-                                    </blockquote>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item text-center">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-15">
-                            <div class="card">
-                                <div class="card-body">
-                                    <blockquote class="blockquote mb-0">
-                                        <p>The Jobs provided exceptional service and valuable advice that helped me ace
-                                            my interviews.</p>
-                                        <footer class="blockquote-footer">Anil Fernando(Marketing Manager)</footer>
-                                    </blockquote>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel"
-                    data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel"
-                    data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-    </div>
-</section>
 
 <footer class="bg-dark text-white text-center py-3">
     <div class="container">
