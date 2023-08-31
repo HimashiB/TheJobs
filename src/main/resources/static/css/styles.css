@@ -1,5 +1,5 @@
 #regPage {
-    background-image: url("../images/fly.jpg");
+    background-image: url("../images/city.jpg");
     background-size: cover;
     backdrop-filter: blur(3px);
     height: 120vh;
@@ -127,7 +127,7 @@
     font-size: 1rem;
 }
 .form button {
-    height: 55px;
+    height: 40px;
     width: 100%;
     color: #fff;
     font-size: 1rem;
@@ -149,4 +149,11 @@
     .form :where(.gender-option, .gender) {
         row-gap: 15px;
     }
+}
+
+.footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;
 }
