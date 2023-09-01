@@ -1,9 +1,17 @@
+#aboutUs{
+    text-align: justify;
+}
+
+#aboutHeadings{
+    color: #023047;
+}
 #regPage {
     background-image: url("../images/city.jpg");
     background-size: cover;
     backdrop-filter: blur(3px);
     height: 120vh;
 }
+
 .c-item {
     height: 750px;
 }
@@ -16,6 +24,7 @@
 #Intro{
     ............................................
     text-align: justify;
+
 }
 
 #lobbyImg{
@@ -35,7 +44,8 @@
 
 #FormHeader{
     text-align: center;
-    color: #000000;
+    color: #023047;
+    font-weight: bold;
 }
 
 .main {

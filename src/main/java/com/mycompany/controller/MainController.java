@@ -25,4 +25,9 @@ public class MainController {
     public String login(){
         return "login";
     }
+
+    @GetMapping("/jobs")
+    public String jobs(){
+        return "jobs";
+    }
 }
