@@ -3,18 +3,27 @@
 <html lang="en" xmlns:th="https://www.thymeleaf.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="https://www.thymeleaf.org">
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" type="text/css" href="../static/css/styles.css"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" th:href="@{/css/styles.css}">
     <title>Registration</title>
 </head>
-<body id="regPage">
+<body >
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
 
     <div class="container">
+<<<<<<< Updated upstream:src/main/resources/templates/registration.html
         <a class="navbar-brand" href="/">The Jobs</a>
+=======
+<<<<<<< Updated upstream:src/main/resources/templates/registration.html
+        <a class="navbar-brand" href="home">The Jobs</a>
+=======
+        <a class="navbar-brand">The Jobs</a>
+>>>>>>> Stashed changes:src/main/resources/templates/register.html
+>>>>>>> Stashed changes:src/main/resources/templates/register.html
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -22,10 +31,10 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    <a class="nav-link" th:href="@{/index}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="about">About</a>
+                    <a class="nav-link" th:href="@{/about}">About</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="jobs">Jobs</a>
@@ -34,78 +43,58 @@
                     <a class="nav-link" href="#">Contact</a>
                 </li>
                 <!--suppress HtmlUnknownTarget -->
+<<<<<<< Updated upstream:src/main/resources/templates/registration.html
                 <a class="nav-link" href="register">Register</a>
+<<<<<<< Updated upstream:src/main/resources/templates/registration.html
                 <a class="nav-link" href="login">Login</a>
+=======
+=======
+                <a class="nav-link active" aria-current="page" th:href="@{/register}">Register</a>
+
+                <a class="nav-link" href="login">Login</a>
+>>>>>>> Stashed changes:src/main/resources/templates/register.html
+>>>>>>> Stashed changes:src/main/resources/templates/register.html
             </ul>
         </div>
     </div>
 </nav>
 <br>
 <section class="main">
+<<<<<<< Updated upstream:src/main/resources/templates/registration.html
     <h3 id="FormHeader">Registration</h3>
+=======
+<<<<<<< Updated upstream:src/main/resources/templates/registration.html
+    <h3 id="FormHeader">Registration Form</h3>
+>>>>>>> Stashed changes:src/main/resources/templates/register.html
     <form action="#" class="form">
         <div class="column">
+=======
+    <h3 id="FormHeader">Registration</h3>
+    `<form class="form" method="post" th:action="@{/register/save}" th:object="${user}">
+>>>>>>> Stashed changes:src/main/resources/templates/register.html
             <div class="input-box">
                 <label>First Name</label>
-                <input type="text" placeholder="Enter first name"  class="form-control" name="firstName" required />
+                <input type="text" th:field="*{firstName}" placeholder="Enter first name"  class="form-control" name="firstName" required minlength="2" maxlength="45" />
             </div>
             <div class="input-box">
                 <label>Last Name</label>
-                <input type="text" placeholder="Enter last name"   class="form-control" name="lastName" required />
+                <input type="text" th:field="*{lastName}" placeholder="Enter last name"   class="form-control" name="lastName" required minlength="2" maxlength="45" />
             </div>
-        </div>
         <div class="input-box">
             <label>Email Address</label>
-            <input type="text" placeholder="Enter email address"  class="form-control" name="email" required />
-        </div>
-
-        <div class="column">
-            <div class="input-box">
-                <label>Phone Number</label>
-                <input type="text" placeholder="Enter phone number"  class="form-control" name="contactNo" required />
-            </div>
-            <div class="input-box">
-                <label>Birth Date</label>
-                <input type="date" placeholder="Enter birth date" class="form-control" name="DOB" required />
-            </div>
-        </div>
-        <div class="gender-box">
-            <h3>Gender</h3>
-            <div class="gender-option">
-                <div class="gender">
-                    <input type="radio" id="check-male" class="form-check-input" name="gender"  />
-                    <label for="check-male">Male</label>
-                </div>
-                <div class="gender">
-                    <input type="radio" id="check-female" class="form-check-input" name="gender" />
-                    <label for="check-female">Female</label>
-                </div>
-                <div class="gender">
-                    <input type="radio" id="check-other" class="form-check-input" name="gender" />
-                    <label for="check-other">Prefer not to say</label>
-                </div>
-            </div>
-        </div>
-        <div class="input-box address">
-            <label>Address</label>
-            <input type="text" placeholder="Enter address"  class="form-control" name="address" required />
-        </div>
-        <div class="input-box address">
-            <label>Username</label>
-            <input type="text" placeholder="Enter username"  class="form-control" name="username" required />
+            <input type="email" th:field="*{email}" placeholder="Enter email address"  class="form-control" name="email" required minlength="5" maxlength="50" />
         </div>
         <div class="input-box address">
             <label>Password</label>
-            <input type="text" placeholder="Enter password"  class="form-control" name="password" required />
+            <input type="password" th:field="*{password}" placeholder="Enter password"  class="form-control" name="password" required minlength="5" maxlength="15" />
         </div>
         <div class="column">
-            <button>Register</button>
-            <button>Clear All</button>
+            <button type="submit" class="btn btn-primary">Register</button>
+            <button type="reset" class="btn btn-secondary">Clear</button>
         </div>
     </form>
 </section>
 <br>
-
 <footer class="bg-dark text-white text-center py-3">
     <div class="container">
         <p>&copy; 2023 The Jobs. All rights reserved.</p>
