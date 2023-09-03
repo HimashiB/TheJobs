@@ -14,7 +14,7 @@
 <body>
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
     <div class="container">
-        <a class="navbar-brand" href="/">The Jobs</a>
+        <a class="navbar-brand" th:href="@{/index}">The Jobs</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -28,11 +28,12 @@
                     <a class="nav-link active" aria-current="page" th:href="@{/about}">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="jobs">Jobs</a>
+                    <a class="nav-link" th:href="@{/jobs}">Jobs</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Contact</a>
                 </li>
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 =======
 <<<<<<< Updated upstream
@@ -42,8 +43,11 @@
                 <!--suppress HtmlUnknownTarget, HtmlUnknownTag -->
 >>>>>>> Stashed changes
                 <a class="nav-link" href="register">Register</a>
+=======
+                <a class="nav-link" th:href="@{/register}">Register</a>
+>>>>>>> Stashed changes
                 <!--suppress HtmlUnknownTarget, HtmlUnknownTag -->
-                <a class="nav-link" href="login">Login</a>
+                <a class="nav-link" th:href="@{/login}">Login</a>
             </ul>
         </div>
     </div>

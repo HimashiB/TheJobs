@@ -3,14 +3,20 @@
 <html lang="en" xmlns:th="https://www.thymeleaf.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="https://www.thymeleaf.org">
 <head>
+<<<<<<< Updated upstream
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" type="text/css" href="../static/css/styles.css"/>
+=======
+    <link rel="stylesheet" type="text/css" href="../static/css/styles.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+>>>>>>> Stashed changes
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" th:href="@{/css/styles.css}">
     <title>Registration</title>
 </head>
+<<<<<<< Updated upstream
 <body >
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
 
@@ -24,6 +30,13 @@
         <a class="navbar-brand">The Jobs</a>
 >>>>>>> Stashed changes:src/main/resources/templates/register.html
 >>>>>>> Stashed changes:src/main/resources/templates/register.html
+=======
+<body id="regPage">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+
+    <div class="container">
+        <a class="navbar-brand" th:href="@{/index}">The Jobs</a>
+>>>>>>> Stashed changes
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -37,12 +50,17 @@
                     <a class="nav-link" th:href="@{/about}">About</a>
                 </li>
                 <li class="nav-item">
+<<<<<<< Updated upstream
                     <a class="nav-link" href="jobs">Jobs</a>
+=======
+                    <a class="nav-link" th:href="@{/jobs}">Jobs</a>
+>>>>>>> Stashed changes
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Contact</a>
                 </li>
                 <!--suppress HtmlUnknownTarget -->
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream:src/main/resources/templates/registration.html
                 <a class="nav-link" href="register">Register</a>
 <<<<<<< Updated upstream:src/main/resources/templates/registration.html
@@ -54,12 +72,17 @@
                 <a class="nav-link" href="login">Login</a>
 >>>>>>> Stashed changes:src/main/resources/templates/register.html
 >>>>>>> Stashed changes:src/main/resources/templates/register.html
+=======
+                <a class="nav-link active" aria-current="page" th:href="@{/register}">Register</a>
+                <a class="nav-link" th:href="@{/login}">Login</a>
+>>>>>>> Stashed changes
             </ul>
         </div>
     </div>
 </nav>
 <br>
 <section class="main">
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream:src/main/resources/templates/registration.html
     <h3 id="FormHeader">Registration</h3>
 =======
@@ -80,6 +103,18 @@
                 <label>Last Name</label>
                 <input type="text" th:field="*{lastName}" placeholder="Enter last name"   class="form-control" name="lastName" required minlength="2" maxlength="45" />
             </div>
+=======
+    <h3 id="FormHeader">Registration</h3>
+    <form class="form" method="post" th:action="@{/register/save}" th:object="${user}">
+        <div class="input-box">
+            <label>First Name</label>
+            <input type="text" th:field="*{firstName}" placeholder="Enter first name"  class="form-control" name="firstName" required minlength="2" maxlength="45" />
+        </div>
+        <div class="input-box">
+            <label>Last Name</label>
+            <input type="text" th:field="*{lastName}" placeholder="Enter last name"   class="form-control" name="lastName" required minlength="2" maxlength="45" />
+        </div>
+>>>>>>> Stashed changes
         <div class="input-box">
             <label>Email Address</label>
             <input type="email" th:field="*{email}" placeholder="Enter email address"  class="form-control" name="email" required minlength="5" maxlength="50" />
@@ -95,6 +130,10 @@
     </form>
 </section>
 <br>
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 <footer class="bg-dark text-white text-center py-3">
     <div class="container">
         <p>&copy; 2023 The Jobs. All rights reserved.</p>
