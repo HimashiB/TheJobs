@@ -5,13 +5,14 @@
 #aboutHeadings{
     color: #023047;
 }
-#regPage {
+/*#regPage {
     background-image: url("../images/city.jpg");
     background-size: cover;
     backdrop-filter: blur(3px);
-    height: 175vh;
-}
+    height: 65vh;
+}*/
 
+/*homepage*/
 .c-item {
     height: 750px;
 }
@@ -21,6 +22,7 @@
     object-fit: cover;
     filter: brightness(0.6);
 }
+/*About Us page*/
 #Intro{
     ............................................
     text-align: justify;
@@ -114,14 +116,5 @@
     .form .column {
         flex-wrap: wrap;
     }
-    .form :where(.gender-option, .gender) {
-        row-gap: 15px;
-    }
 }
 
-.footer{
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 2.5rem;
-}
