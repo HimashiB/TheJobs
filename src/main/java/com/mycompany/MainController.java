@@ -4,6 +4,8 @@ import com.mycompany.user.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class MainController {
@@ -23,9 +25,5 @@ public class MainController {
         return "jobs";
     }
 
-    @GetMapping("/login")
-    public String showLoginForm() {
-        return "login";
-    }
 
 }
