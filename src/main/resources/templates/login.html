@@ -1,24 +1,20 @@
-<!doctype html>
+<!DOCTYPE html>
 <!--suppress ALL -->
 <html lang="en" xmlns:th="https://www.thymeleaf.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="https://www.thymeleaf.org">
 <head>
-    <link rel="stylesheet" type="text/css" href="../static/css/styles.css"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-<<<<<<< Updated upstream
-    <link rel="stylesheet" th:href="@{/css/log.css}">
-=======
     <link rel="stylesheet" th:href="@{/css/styles.css}">
->>>>>>> Stashed changes
-    <title>Login</title>
+    <title>About Us</title>
 </head>
 
-<body id="logPage">
+<body>
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
     <div class="container">
-        <a class="navbar-brand" href="home">The Jobs</a>
+        <a class="navbar-brand" th:href="@{/index}">The Jobs</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -26,78 +22,187 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-<<<<<<< Updated upstream
-                    <a class="nav-link active" aria-current="page" href="/">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="about">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="jobs">Jobs</a>
-=======
                     <a class="nav-link" th:href="@{/index}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{/about}">About</a>
+                    <a class="nav-link active" aria-current="page" th:href="@{/about}">About</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" th:href="@{/jobs}">Jobs</a>
->>>>>>> Stashed changes
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Contact</a>
                 </li>
-                <!--suppress HtmlUnknownTarget -->
-<<<<<<< Updated upstream
-                <a class="nav-link" href="register">Register</a>
-                <a class="nav-link" href="login">Login</a>
-=======
                 <a class="nav-link" th:href="@{/register}">Register</a>
-                <a class="nav-link active" aria-current="page" th:href="@{/login}">Login</a>
->>>>>>> Stashed changes
+                <!--suppress HtmlUnknownTarget, HtmlUnknownTag -->
+                <a class="nav-link" th:href="@{/login}">Login</a>
             </ul>
         </div>
     </div>
 </nav>
-<br>
-<section id="loginForm">
-    <div class="wrapper">
-        <div class="title">
-            Login Form
+
+<section id="aboutUs" class="container my-5">
+    <div class="row">
+        <div class="col-md-6">
+            <h2 id="aboutHeadings" >Our Story</h2>
+            <div class="col-xs-12"><hr></div>
+            <p id="aboutPara" >Welcome to The Jobs, where experience meets excellence in the world of job consultation.
+                With over 40 years of unwavering commitment and success, we have established ourselves as the premier
+                destination for individuals and businesses seeking top-notch career solutions.
+            </p>
+            <p id="aboutPara">
+                Our journey began four decades ago with a vision to transform lives through meaningful employment.
+                Since then, we have been dedicated to forging powerful connections between exceptional talent and thriving organizations.
+                Our legacy is built upon a foundation of trust, integrity, and a deep understanding of the ever-evolving job market.
+            </p>
+            <br>
+            <div>
+                <h2 id="aboutHeadings">Our Mission</h2>
+                <div class="col-xs-12"><hr></div>
+                <p id="Intro" >"Serve as a steadfast partner in navigating the dynamic landscape of employment.
+                    We are dedicated to unlocking the hidden potential within individuals, fostering connections that lead
+                    to lasting success. Through personalized guidance, insightful expertise, and unwavering support,
+                    we empower dreams and drive growth, creating a brighter future for all."
+                </p>
+            </div>
+            <br>
+            <div>
+                <h2 id="aboutHeadings">Our Vission</h2>
+                <div class="col-xs-12"><hr></div>
+                <p id="aboutPara" > "Envisioning Opportunities, Transforming Careers."</p>
+            </div>
         </div>
-        <form action="#">
-            <div class="field">
-                <input type="text" required>
-                <label>Email Address</label>
-            </div>
-            <div class="field">
-                <input type="password" required>
-                <label>Password</label>
-            </div>
-            <div class="content">
-                <div class="pass-link">
-                    <a href="#">Forgot password?</a>
-                </div>
-            </div>
-            <div class="field">
-                <input type="submit" value="Login">
-            </div>
-            <div class="signup-link">
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-                Not a member? <a href="reigster">Signup now</a>
-=======
-                Not a member? <a th:href="@{/register}">Signup now</a>
->>>>>>> Stashed changes
-=======
-                Not a member? <a  th:href="@{/register}>Signup now</a>
->>>>>>> Stashed changes
-            </div>
-        </form>
+        <div class="col-md-6">
+            <img id="lobbyImg" src="../Images/lobby.jpg" alt="Agency Image" class="img-fluid">
+        </div>
     </div>
 </section>
-<br>
 
+<section id="services" class="bg-light py-5">
+    <div class="container">
+        <h2 id="aboutHeadings" class="text-center mb-4">Our Services</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <!--img src="service1.jpg" alt="Service 1" class="card-img-top"> -->
+                    <div class="card-body">
+                        <h5 class="card-title">Job Search</h5>
+                        <p class="card-text">Get personalized job recommendations and guidance in finding the perfect
+                            job.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <!--img src="service1.jpg" alt="Service 1" class="card-img-top"> -->
+                    <div class="card-body">
+                        <h5 class="card-title">Resume Building</h5>
+                        <p class="card-text">Get a professional resume that stands out and increases your chances of
+                            getting hired.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <!--img src="service1.jpg" alt="Service 1" class="card-img-top"> -->
+                    <div class="card-body">
+                        <h5 class="card-title">Interview Preparation</h5>
+                        <p class="card-text">Prepare for interviews with confidence and improve chances of landing your
+                            dream job.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="team py-5">
+    <div class="container">
+        <h2 id="aboutHeadings" class="text-center mb-4">Management Team</h2>
+        <br>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <img id="team" src="../Images/image2.jpg" alt="Team Member 1" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">Marnie Solis </h5>
+                        <p class="card-text">Chief Executive Officer</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img id="team" src="../Images/image3.jpg" alt="Team Member 2" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">Dilushi Senanayake</h5>
+                        <p class="card-text">Chief Financial Officer</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img id="team" src="../Images/image4.jpg" alt="Team Member 1" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">Mark Johnson</h5>
+                        <p class="card-text">Chief Operating Officer</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="testimonials py-5">
+    <div class="container">
+        <h2  id="aboutHeadings"  class="text-center mb-5">Client Testimonials</h2>
+        <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active text-center">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-15">
+                            <div class="card">
+                                <div class="card-body">
+                                    <blockquote class="blockquote mb-0">
+                                        <p>Thanks to The Jobs, I was able to land my dream job within weeks. Highly
+                                            recommended.</p>
+                                        <footer class="blockquote-footer">Melissa Bandara(Web Developer)</footer>
+                                    </blockquote>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item text-center">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-15">
+                            <div class="card">
+                                <div class="card-body">
+                                    <blockquote class="blockquote mb-0">
+                                        <p>The Jobs provided exceptional service and valuable advice that helped me ace
+                                            my interviews.</p>
+                                        <footer class="blockquote-footer">Anil Fernando(Marketing Manager)</footer>
+                                    </blockquote>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel"
+                    data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel"
+                    data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+</section>
 <footer class="bg-dark text-white text-center py-3">
     <div class="container">
         <p>&copy; 2023 The Jobs. All rights reserved.</p>
@@ -113,6 +218,5 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
         crossorigin="anonymous"></script>
-
 </body>
 </html>
