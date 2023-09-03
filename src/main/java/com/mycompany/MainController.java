@@ -21,9 +21,4 @@ public class MainController {
         return "jobs";
     }
 
-    @GetMapping("/login")
-    public String showLoginForm() {
-        return "login";
-    }
-
 }
