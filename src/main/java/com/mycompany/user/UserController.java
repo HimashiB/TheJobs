@@ -22,7 +22,6 @@ public class UserController {
     @PostMapping("/register/save")
     public String saveUser(User user){
         service.save(user);
-
         return "redirect:/login";
     }
 }
