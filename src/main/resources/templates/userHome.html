@@ -21,25 +21,71 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" th:href="@{/index}">Home</a>
+                    <a class="nav-link active" aria-current="page" th:href="@{/userHome}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{/about}">About</a>
+                    <a class="nav-link" href="#">Profile</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" th:href="@{/jobs}">Jobs</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
-                </li>
-                <!--suppress HtmlUnknownTarget -->
-                <a class="nav-link" th:href="@{/register}">Register</a>
-                <a class="nav-link" th:href="@{/login}">Login</a>
+                <a class="nav-link" th:href="@{/logout}">Logout</a>
             </ul>
         </div>
     </div>
 </nav>
-<h1>Welcome to User HomePage!</h1>
+
+<section class="hero pt-5 pb-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2 text-center">
+                <h1>Welcome, John!</h1>
+                <p>Find your dream job today!</p>
+                <!--Insert Background image here-->
+                <a type="submit" th:href="@{/appointments}"class="btn btn-primary">Book Appointment</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="featured-products">
+    <div class="container">
+        <h2>Featured Products</h2>
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="card">
+                    <img src="product1.png" class="card-img-top" alt="Product 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Product 1</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        <a href="#" class="btn btn-primary">Buy Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card">
+                    <img src="product2.png" class="card-img-top" alt="Product 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Product 2</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        <a href="#" class="btn btn-primary">Buy Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card">
+                    <img src="product3.png" class="card-img-top" alt="Product 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Product 3</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        <a href="#" class="btn btn-primary">Buy Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<br>
+
 <footer class="bg-dark text-white text-center py-3">
     <div class="container">
         <p>&copy; 2023 The Jobs. All rights reserved.</p>

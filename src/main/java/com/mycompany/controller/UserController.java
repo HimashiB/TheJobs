@@ -55,4 +55,10 @@ public class UserController {
     public String showUserHome() {
         return "userHome";
     }
+
+    @GetMapping("/appointments")
+    public String showAppointmentPage() {
+        return "appointments";
+    }
+
 }
