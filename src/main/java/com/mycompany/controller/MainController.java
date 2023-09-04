@@ -1,4 +1,4 @@
-package com.mycompany;
+package com.mycompany.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,5 +20,6 @@ public class MainController {
     public String showJobsPage() {
         return "jobs";
     }
+
 
 }
