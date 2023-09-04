@@ -7,9 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" th:href="@{/css/styles.css}">
+    <link rel="stylesheet" th:href="@{/css/app.css}">
     <title>The Jobs</title>
 </head>
+
 <body>
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
     <div class="container">
@@ -24,7 +25,7 @@
                     <a class="nav-link active" aria-current="page" th:href="@{/userHome}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" >Profile</a>
+                    <a class="nav-link" href="@{/country}">Country</a>
                 </li>
                 <a class="nav-link" th:href="@{/logout}">Logout</a>
             </ul>
@@ -32,55 +33,17 @@
     </div>
 </nav>
 
-<section class="hero pt-5 pb-5">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 offset-md-2 text-center">
-                <h1>Welcome, John!</h1>
-                <p>Find your dream job today!</p>
-                <!--Insert Background image here-->
-                <a type="submit" th:href="@{/appointments}" class="btn btn-primary">Book Appointment</a>
+<section>
+    <div class="forms">
+        <h3 id="FormHeader">Add Countries</h3>
+        <form id="appointment-form" method="post" th:action="@{/country/save}" th:object="${country}">
+            <div class="mb-3">
+                <label class="form-label">Enter Country Name</label>
+                <input type="text" th:field="*{countryName}" class="form-control" required>
             </div>
-        </div>
-    </div>
-</section>
-
-
-<section class="featured-products">
-    <div class="container">
-        <h2>Featured Products</h2>
-        <div class="row">
-            <div class="col-lg-4">
-                <div class="card">
-                    <img src="product1.png" class="card-img-top" alt="Product 1">
-                    <div class="card-body">
-                        <h5 class="card-title">Product 1</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                        <a href="#" class="btn btn-primary">Buy Now</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="card">
-                    <img src="product2.png" class="card-img-top" alt="Product 2">
-                    <div class="card-body">
-                        <h5 class="card-title">Product 2</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                        <a href="#" class="btn btn-primary">Buy Now</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="card">
-                    <img src="product3.png" class="card-img-top" alt="Product 3">
-                    <div class="card-body">
-                        <h5 class="card-title">Product 3</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                        <a href="#" class="btn btn-primary">Buy Now</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="reset" class="btn btn-secondary">Clear</button>
+        </form>
     </div>
 </section>
 

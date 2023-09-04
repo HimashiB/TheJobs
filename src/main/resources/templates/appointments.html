@@ -38,24 +38,27 @@
         <h3 id="FormHeader">Appointment</h3>
         <form id="appointment-form">
             <div class="mb-3">
-                <label for="name" class="form-label">Name</label>
-                <input type="text" id="name" class="form-control" required>
-            </div>
-            <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" id="email" class="form-control" required>
-            </div>
-            <div class="mb-3">
-                <label for="phone" class="form-label">Phone</label>
-                <input type="tel" id="phone" class="form-control" required>
-            </div>
-            <div class="mb-3">
                 <label for="date" class="form-label">Date</label>
-                <input type="date" id="date" class="form-control" required>
+                <input type="date" class="form-control" required>
             </div>
             <div class="mb-3">
-                <label for="time" class="form-label">Time</label>
-                <input type="time" id="time" class="form-control" required>
+                <label class="form-label">Time</label>
+                <input type="time" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <tr>
+                    <label class="form-label">Country</label>
+                </tr>
+                <div class="mb-3">
+                <td>
+                    <select>
+                        <option>
+
+                        </option>
+                    </select>
+                </td>
+            </div>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>

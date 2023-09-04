@@ -3,7 +3,7 @@ package com.mycompany.model;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "country")
+@Table(name = "country", indexes = @Index(name = "idx_country_country_name",columnList = "country_name"))
 public class Country {
 
     @Id
