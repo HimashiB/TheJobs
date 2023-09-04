@@ -1,7 +1,8 @@
-package com.mycompany.user;
+package com.mycompany.model;
 
 import jakarta.persistence.*;
 
+@SuppressWarnings("unused")
 @Entity
 @Table(name = "users")
 public class User {
@@ -19,7 +20,7 @@ public class User {
     @Column(nullable = false, unique = true, length = 45)
     private String email;
 
-    @Column(length = 15, nullable = false)
+    @Column( nullable = false)
     private String password;
 
 

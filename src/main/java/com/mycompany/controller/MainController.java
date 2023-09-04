@@ -1,4 +1,4 @@
-package com.mycompany;
+package com.mycompany.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,9 +21,5 @@ public class MainController {
         return "jobs";
     }
 
-    @GetMapping("/login")
-    public String showLoginForm() {
-        return "login";
-    }
 
 }
