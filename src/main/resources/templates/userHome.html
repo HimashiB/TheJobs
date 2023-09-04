@@ -24,7 +24,10 @@
                     <a class="nav-link active" aria-current="page" th:href="@{/userHome}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Profile</a>
+                    <a class="nav-link" th:href="@{/appointments}">Appointments</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/history}">Appointment History</a>
                 </li>
                 <a class="nav-link" th:href="@{/logout}">Logout</a>
             </ul>
@@ -39,7 +42,7 @@
                 <h1>Welcome, John!</h1>
                 <p>Find your dream job today!</p>
                 <!--Insert Background image here-->
-                <a type="submit" th:href="@{/appointments}"class="btn btn-primary">Book Appointment</a>
+                <a type="submit" th:href="@{/appointments}" class="btn btn-primary">Book Appointment</a>
             </div>
         </div>
     </div>

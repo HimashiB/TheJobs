@@ -28,7 +28,7 @@
                     <a class="nav-link" th:href="@{/appointments}">Appointments</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{/history}">Appointment History</a>
+                    <a class="nav-link" th:href="@{/country}">Country</a>
                 </li>
                 <a class="nav-link" th:href="@{/logout}">Logout</a>
             </ul>
@@ -37,34 +37,17 @@
 </nav>
 
 <section>
-    <div class="forms" >
-        <h3 id="FormHeader">Appointment</h3>
-        <form th:action="@{/bookings/save}" th:object="${booking}" method="post" >
+    <div class="forms">
+        <h3 id="FormHeader">Add Countries</h3>
+        <form id="appointment-form" th:action="@{/country/save}" th:object="${country}" method="post" >
             <div class="mb-3">
-                <label class="form-label">Date</label>
-                <input type="date" th:field="*{date}" class="form-control" required>
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Time</label>
-                <input type="time" th:field="*{time}" class="form-control" required>
-            </div>
-            <div class="mb-3">
-                <tr>
-                    <label class="form-label">Country</label>
-                </tr>
-                <div class="mb-3">
-                <td>
-                    <select th:field="*{country}" class="form-control" required>
-                        <th:block th:each="con : ${listCountries}" >
-                        <option th:text="${con.name}" th:value="${con.id}" />
-                        </th:block>
-                    </select>
-                </td>
-            </div>
+                <label class="form-label">Enter Country Name</label>
+                <input type="text" th:field="*{name}" class="form-control" required>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="reset" class="btn btn-secondary">Clear</button>
         </form>
-        </div>
+    </div>
 </section>
 
 <br>
