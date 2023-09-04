@@ -1,4 +1,3 @@
-// noinspection DuplicatedCode
 
 const jobs = [
     {
