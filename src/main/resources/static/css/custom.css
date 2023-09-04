@@ -1,0 +1,23 @@
+.hero {
+    padding: 80px 0;
+    text-align: center;
+    background-color: #f8f9fa;
+
+}
+
+.hero img {
+    max-height: 400px;
+}
+
+.featured-products {
+    padding: 80px 0;
+}
+
+.featured-products h2 {
+    margin-bottom: 40px;
+}
+
+
+#mainHeader {
+    text-align: center;
+}
