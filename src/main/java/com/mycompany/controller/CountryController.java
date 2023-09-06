@@ -16,7 +16,6 @@ public class CountryController {
     @Autowired
     private CountryRepository repo;
 
-
     @GetMapping("/countryList")
     public String listCountries(Model model){
         List<Country> listCountries = repo.findAll();
@@ -33,7 +32,7 @@ public class CountryController {
     @PostMapping("country/save")
     public  String addCountries(Country country){
         repo.save(country);
-        return "country";
+        return "userHome";
     }
 
 }

@@ -9,11 +9,10 @@ public class JobTypes {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(length = 100,nullable = false,unique = true )
-    private String name;
+    @Column(length = 120,nullable = false,unique = true )
+    private String names;
 
     public JobTypes() {
-
     }
 
     public Integer getId() {
@@ -24,11 +23,13 @@ public class JobTypes {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getNames() {
+        return names;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNames(String names) {
+        this.names = names;
     }
+
 }
+

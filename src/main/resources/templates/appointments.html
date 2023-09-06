@@ -22,15 +22,15 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" th:href="@{/userHome}">Home</a>
+                    <a class="nav-link active" aria-current="page" th:href="@{/userHome}">Profile</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" th:href="@{/appointments}">Appointments</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{/history}">Appointment History</a>
+                    <a class="nav-link" th:href="@{/history}">History</a>
                 </li>
-                <a class="nav-link" th:href="@{/logout}">Logout</a>
+                <a class="nav-link" th:href="@{/jobtypes}">Jobs</a>
             </ul>
         </div>
     </div>
@@ -61,6 +61,19 @@
                     </select>
                 </td>
             </div>
+                <div class="mb-3">
+                    <tr>
+                        <label class="form-label">Jobs</label>
+                    </tr>
+                    <div class="mb-3">
+                        <td>
+                            <select th:field="*{jobTypes}" class="form-control" required>
+                                <th:block th:each="job : ${listJobs}" >
+                                    <option th:text="${job.names}" th:value="${job.id}" />
+                                </th:block>
+                            </select>
+                        </td>
+                    </div>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>

@@ -2,8 +2,10 @@ package com.mycompany.controller;
 
 import com.mycompany.model.Booking;
 import com.mycompany.model.Country;
+import com.mycompany.model.JobTypes;
 import com.mycompany.repository.BookingRepository;
 import com.mycompany.repository.CountryRepository;
+import com.mycompany.repository.JobTypesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,11 +23,18 @@ public class BookingController {
     @Autowired
     CountryRepository countryrepo;
 
+    @Autowired
+    JobTypesRepository jobrepo;
+
     @GetMapping("/appointments")
     public String showAppointmentPage(Model model){
         List<Country>listCountries= countryrepo.findAll();
         model.addAttribute("booking", new Booking());
         model.addAttribute("listCountries",listCountries);
+        List<JobTypes>listJobs = jobrepo.findAll();
+        model.addAttribute("booking", new Booking());
+        model.addAttribute("listJobs", listJobs);
+
         return "appointments";
     }
 

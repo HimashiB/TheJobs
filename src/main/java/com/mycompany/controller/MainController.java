@@ -16,9 +16,9 @@ public class MainController {
         return "about";
     }
 
-    @GetMapping("/jobs")
+    @GetMapping("/browse")
     public String showJobsPage() {
-        return "jobs";
+        return "browse";
     }
 
 

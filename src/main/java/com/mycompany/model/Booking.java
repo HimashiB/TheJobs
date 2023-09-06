@@ -22,7 +22,7 @@ public class Booking {
     private  Country country;
 
     @ManyToOne
-    @JoinColumn(name="jobTypes_id")
+    @JoinColumn(name="job_id")
     private  JobTypes jobTypes;
 
     public Integer getId() {
@@ -55,5 +55,13 @@ public class Booking {
 
     public void setCountry(Country country) {
         this.country = country;
+    }
+
+    public JobTypes getJobTypes() {
+        return jobTypes;
+    }
+
+    public void setJobTypes(JobTypes jobTypes) {
+        this.jobTypes = jobTypes;
     }
 }
