@@ -1,33 +1,39 @@
 package com.mycompany.controller;
 
 import com.mycompany.model.Country;
-import com.mycompany.model.User;
 import com.mycompany.repository.CountryRepository;
-import com.mycompany.service.CountryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import java.util.List;
 
 @Controller
 public class CountryController {
 
     @Autowired
-    private CountryService countryService;
+    private CountryRepository repo;
+
+
+    @GetMapping("/countryList")
+    public String listCountries(Model model){
+        List<Country> listCountries = repo.findAll();
+        model.addAttribute("listCountries",listCountries);
+        return"countryList";
+    }
 
     @GetMapping("/country")
-    public String showCountryForm(Model model) {
-        // create model object to store form data
-        Country country = new Country();
+    public String showCountryPage(Model model){
         model.addAttribute("country", new Country());
         return "country";
     }
-    @PostMapping("/country/save")
-    public String saveUser(Country country, RedirectAttributes ra) {
-        countryService.save(country);
-        ra.addFlashAttribute("message", "The country has been saved successfully.");
-        return "redirect:/country";
+
+    @PostMapping("country/save")
+    public  String addCountries(Country country){
+        repo.save(country);
+        return "country";
     }
+
 }
