@@ -39,7 +39,9 @@ public class BookingController {
     }
 
     @GetMapping("/history")
-    public String showHistoryPage(){
+    public String appointmentHistory(Model model){
+        List<Booking> listAppointments = repo.findAll();
+        model.addAttribute("listAppointments", listAppointments);
         return "history";
     }
 
@@ -48,4 +50,5 @@ public class BookingController {
         repo.save(booking);
         return "redirect:/history";
     }
+
 }

@@ -47,7 +47,7 @@
 <br>
 
 <div class="container mt-4">
-    <h1>Appointment Table</h1>
+    <h1>Appointment History</h1>
     <br>
     <!-- Search Input -->
     <div class="mb-3">
@@ -61,34 +61,24 @@
             <th>Appointment ID</th>
             <th>Appointment Date</th>
             <th>Appointment Time</th>
-            <th>Country</th>
-            <th>Job</th>
+            <th>Applied Country</th>
+            <th>Applied Job</th>
             <th>Action</th>
         </tr>
         </thead>
         <tbody>
+        <th:block th:each="booking : ${listAppointments}" >
         <tr>
-            <td>1</td>
-            <td>2023-09-10</td>
-            <td>09:00 AM</td>
-            <td>USA</td>
-            <td>Developer</td>
+            <td>[[${booking.id}]]</td>
+            <td>[[${booking.date}]]</td>
+            <td>[[${booking.time}]]</td>
+            <td>[[${booking.country.name}]]</td>
+            <td>[[${booking.jobTypes.names}]]</td>
             <td>
                 <button class="btn btn-primary update-button" data-toggle="modal" data-target="#updateModal">Update</button>
             </td>
         </tr>
-        <!-- Add more rows here -->
-
-        <tr>
-            <td>2</td>
-            <td>2023-09-10</td>
-            <td>09:00 AM</td>
-            <td>England</td>
-            <td>Developer</td>
-            <td>
-                <button class="btn btn-primary update-button" data-toggle="modal" data-target="#updateModal">Update</button>
-            </td>
-        </tr>
+        </th:block>
         </tbody>
     </table>
 </div>
