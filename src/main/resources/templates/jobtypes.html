@@ -39,9 +39,9 @@
 <section>
     <div class="forms">
         <h3 id="FormHeader">Add Countries</h3>
-        <form id="appointment-form" th:action="@{/country/save}" th:object="${country}" method="post" >
+        <form id="appointment-form" th:action="@{/jobtypes/save}" th:object="${country}" method="post" >
             <div class="mb-3">
-                <label class="form-label">Enter Country Name</label>
+                <label class="form-label">Enter Job Category</label>
                 <input type="text" th:field="*{name}" class="form-control" required>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>

@@ -21,6 +21,10 @@ public class Booking {
     @JoinColumn(name="country_id")
     private  Country country;
 
+    @ManyToOne
+    @JoinColumn(name="jobTypes_id")
+    private  JobTypes jobTypes;
+
     public Integer getId() {
         return id;
     }
