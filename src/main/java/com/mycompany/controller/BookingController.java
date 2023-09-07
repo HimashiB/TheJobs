@@ -26,7 +26,7 @@ public class BookingController {
     @Autowired
     JobTypesRepository jobrepo;
 
-    @GetMapping("/appointments")
+    @GetMapping("/appointment")
     public String showAppointmentPage(Model model){
         List<Country>listCountries= countryrepo.findAll();
         model.addAttribute("booking", new Booking());
@@ -35,7 +35,7 @@ public class BookingController {
         model.addAttribute("booking", new Booking());
         model.addAttribute("listJobs", listJobs);
 
-        return "appointments";
+        return "appointment";
     }
 
     @GetMapping("/history")
