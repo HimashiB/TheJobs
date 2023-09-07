@@ -11,7 +11,7 @@
     <title>Login</title>
 </head>
 
-<body id="logPage">
+<body id="regPage">
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
     <div class="container">
         <a class="navbar-brand" href="home">The Jobs</a>
@@ -46,15 +46,17 @@
     <form class="form"  method="post"th:action="@{/loginpage}" th:object="${user}">
         <div class="input-box">
             <label>Email Address</label>
-            <input type="email" th:field="*{email}" placeholder="Enter email address"  class="form-control" name="email" >
+            <input type="email" th:field="*{email}" placeholder="Enter email address"  class="form-control" name="email" required/> >
         </div>
         <div class="input-box address">
             <label>Password</label>
-            <input type="password" th:field="*{password}" placeholder="Enter password"  class="form-control" name="password">
+            <input type="password" th:field="*{password}" placeholder="Enter password"  class="form-control" name="password" required/>
         </div>
         <div class="column">
             <button type="submit" class="btn btn-primary">Login</button>
         </div>
+        <div>
+            <br>
             <div class="signup-link" > Not a member? <a th:href="@{/register}">Signup now</a>
             </div>
             </div>

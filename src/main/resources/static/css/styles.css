@@ -5,12 +5,12 @@
 #aboutHeadings{
     color: #023047;
 }
-/*#regPage {
+#regPage {
     background-image: url("../images/city.jpg");
     background-size: cover;
     backdrop-filter: blur(3px);
-    height: 65vh;
-}*/
+    height: 90vh;
+}
 
 /*homepage*/
 .c-item {

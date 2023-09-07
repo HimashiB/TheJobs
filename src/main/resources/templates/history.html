@@ -16,6 +16,11 @@
             padding: 2px 5px;
             margin-right: 5px;
         }
+        .delete-button {
+            padding: 2px 5px;
+            margin-right: 5px;
+        }
+        h1 {text-align: center;}
     </style>
 
 </head>
@@ -31,7 +36,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" th:href="@{/userHome}">Home</a>
+                    <a class="nav-link active" aria-current="page" th:href="@{/userHome}">Profile</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" th:href="@{/appointments}">Appointments</a>
@@ -39,7 +44,13 @@
                 <li class="nav-item">
                     <a class="nav-link" th:href="@{/history}">History</a>
                 </li>
-                <a class="nav-link" th:href="@{/jobtypes}">Jobs</a>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/jobTypes}">Jobs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/country}">Country</a>
+                </li>
+                <a class="nav-link" th:href="@{/Logout}">Logout</a>
             </ul>
         </div>
     </div>
@@ -47,7 +58,7 @@
 <br>
 
 <div class="container mt-4">
-    <h1>Appointment History</h1>
+    <h1>Appointment Details Master</h1>
     <br>
     <!-- Search Input -->
     <div class="mb-3">
@@ -76,6 +87,7 @@
             <td>[[${booking.jobTypes.names}]]</td>
             <td>
                 <button class="btn btn-primary update-button" data-toggle="modal" data-target="#updateModal">Update</button>
+
             </td>
         </tr>
         </th:block>

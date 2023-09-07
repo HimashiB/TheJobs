@@ -9,6 +9,12 @@
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" th:href="@{/css/app.css}">
     <title>The Jobs</title>
+
+    <style>
+        #details{
+            text-align: center;
+        }
+    </style>
 </head>
 
 <body>
@@ -30,8 +36,13 @@
                 <li class="nav-item">
                     <a class="nav-link" th:href="@{/history}">History</a>
                 </li>
-                <a class="nav-link" th:href="@{/jobtypes}">Jobs</a>
-                <a class="nav-link" th:href="@{/country}">Country</a>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/jobtypes}">Jobs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/country}">Country</a>
+                </li>
+                <a class="nav-link" th:href="@{/Logout}">Logout</a>
             </ul>
         </div>
     </div>
@@ -39,7 +50,8 @@
 
 <section>
     <div class="forms">
-        <h3 id="FormHeader">Add Jobs</h3>
+        <h3 id="FormHeader">Jobs</h3>
+        <p id="details">Add Job Categories to Master List</p>
         <form id="appointment-form" th:action="@{/jobtypes/save}" th:object="${jobtypes}" method="post" >
             <div class="mb-3">
                 <label class="form-label">Enter Job Category</label>
