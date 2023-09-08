@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.util.regex.Pattern;
 
 @SuppressWarnings("JpaDataSourceORMInspection")
 @Entity
@@ -13,17 +14,21 @@ public class Booking {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @Column(nullable = false)
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate date;
 
+    @Column(nullable = false)
     private String time;
 
     @ManyToOne
-    @JoinColumn(name="country_id")
-    private  Country country;
+    @JoinColumn(name = "country_id", nullable = false)
+    private Country country;
 
     @ManyToOne
-    @JoinColumn(name="job_id")
-    private  JobTypes jobTypes;
+    @JoinColumn(name = "job_id", nullable = false)
+    private JobTypes jobTypes;
+
 
     public Integer getId() {
         return id;
@@ -64,4 +69,5 @@ public class Booking {
     public void setJobTypes(JobTypes jobTypes) {
         this.jobTypes = jobTypes;
     }
+
 }
