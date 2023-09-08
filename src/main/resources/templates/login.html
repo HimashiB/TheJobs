@@ -1,20 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<!doctype html>
+<!--suppress ALL -->
+<html lang="en" xmlns:th="https://www.thymeleaf.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="https://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/styles.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" th:href="@{/css/form.css}">
-    <title>Login Form</title>
+    <title>Login</title>
 
 </head>
 
 <body id="regPage">
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
     <div class="container">
-        <a class="navbar-brand" href="home">The Jobs</a>
+        <a class="navbar-brand" th:href="@{/index}">The Jobs</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -28,7 +29,7 @@
                     <a class="nav-link" th:href="@{/about}">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{/jobs}">Jobs</a>
+                    <a class="nav-link" th:href="@{/browse}">Jobs</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Contact</a>
@@ -48,26 +49,29 @@
             <div class="col-md-6">
                 <div class="card mt-5">
                     <div class="card-header">
-                        <h3 class="text-center">Login Form</h3>
+                        <h3 class="text-center"> Member Login</h3>
                     </div>
                     <div class="card-body">
-                        <form class="form"  method="post"th:action="@{/loginpage}" th:object="${user}">
-                            <div class="mb-3">
+                        <form class="form"  method="post" th:action="@{/loginpage}" th:object="${user}">
+                            <div class="input-box">
                                 <label>Email Address</label>
                                 <input type="email" th:field="*{email}" placeholder="Enter email address"  class="form-control" name="email" required>
                             </div>
-                            <div class="mb-3">
-                                <label for="password" class="form-label">Password</label>
+                            <br>
+                            <div class="input-box address">
+                                <label>Password</label>
                                 <input type="password" th:field="*{password}" placeholder="Enter password"  class="form-control" name="password" required>
                             </div>
-                            <div class="text-center">
+                            <br>
+                            <div class="column">
                                 <button type="submit" class="btn btn-primary">Login</button>
                             </div>
-                            <br>
-                            <div class="signup-link" > Not a member? <a th:href="@{/register}">Signup now</a>
+                            <div>
+                                <br>
+                                <div class="signup-link" > Not a member? <a th:href="@{/register}">Signup now</a>
+                                </div>
                             </div>
-                    </div>
-                    </form>
+                        </form>
                 </div>
             </div>
         </div>
@@ -75,6 +79,7 @@
     </div>
 </article>
 </body>
+
 <footer class="footer py-3 bg-dark text-white text-center">
     <div class="container">
         <span>© 2023 The Jobs. All rights reserved.</span>

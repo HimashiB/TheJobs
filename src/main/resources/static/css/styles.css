@@ -41,6 +41,7 @@
 #regPage {
     background-image: url("../images/city.jpg");
     background-size: cover;
+    height: 700px;
 }
 
 
@@ -118,6 +119,6 @@
     }
 
     article{
-        flex:1;
+        flex: content-box;
     }
 }

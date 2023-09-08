@@ -39,7 +39,7 @@
 <section>
     <div class="forms" >
         <h3 id="FormHeader">Appointment</h3>
-        <form th:action="@{/bookings/save}" th:object="${booking}" method="post" >
+        <form th:action="@{/appointment/save}" th:object="${booking}" method="post" >
             <div class="mb-3">
                 <label class="form-label">Date</label>
                 <input type="date" th:field="*{date}" class="form-control" required>
