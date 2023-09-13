@@ -6,7 +6,7 @@ import jakarta.persistence.*;
 import java.time.LocalDate;
 import java.util.regex.Pattern;
 
-@SuppressWarnings("JpaDataSourceORMInspection")
+
 @Entity
 public class Booking {
 
@@ -28,6 +28,9 @@ public class Booking {
     @ManyToOne
     @JoinColumn(name = "job_id", nullable = false)
     private JobTypes jobTypes;
+
+    public Booking() {
+    }
 
     public Integer getId() {
         return id;
@@ -67,5 +70,16 @@ public class Booking {
 
     public void setJobTypes(JobTypes jobTypes) {
         this.jobTypes = jobTypes;
+    }
+
+    @Override
+    public String toString() {
+        return "Booking{" +
+                "id=" + id +
+                ", date=" + date +
+                ", time='" + time + '\'' +
+                ", country=" + country +
+                ", jobTypes=" + jobTypes +
+                '}';
     }
 }

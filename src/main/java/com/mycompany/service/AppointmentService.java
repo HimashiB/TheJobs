@@ -21,7 +21,7 @@ public class AppointmentService {
         return bookingrepo.findAll();
     }
 
-    public void deleteByID(int id){
+    public void deleteById(int id){
         bookingrepo.deleteById(id);
     }
 

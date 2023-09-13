@@ -1,5 +1,6 @@
 package com.mycompany.controller;
 
+
 import com.mycompany.model.Booking;
 import com.mycompany.model.User;
 import com.mycompany.repository.UserRepository;
@@ -43,7 +44,6 @@ public class UserController {
         return "login";
     }
 
-    //Handler for Login Process
     @PostMapping("/loginpage")
     public String loginProcess(@RequestParam("email") String email, @RequestParam("password") String password) {
         User dbUser = userRepository.findByEmail(email);
@@ -53,6 +53,7 @@ public class UserController {
         else
             return "redirect:/login";
     }
+
 
     @GetMapping("/UserHistory")
     public ModelAndView getAllUsers(){

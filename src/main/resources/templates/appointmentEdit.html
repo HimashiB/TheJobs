@@ -3,19 +3,12 @@
 <html lang="en" xmlns:th="https://www.thymeleaf.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="https://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="../static/css/styles.css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" th:href="@{/css/app.css}">
     <title>The Jobs</title>
-
-    <style>
-        #details{
-            text-align: center;
-        }
-    </style>
 </head>
 
 <body>
@@ -32,40 +25,73 @@
                     <a class="nav-link active" aria-current="page" th:href="@{/adminHome}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{/history}">Settings</a>
+                    <a class="nav-link" th:href="@{/appointment}">Appointments</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/history}">History</a>
                 </li>
                 <a class="nav-link" th:href="@{/Logout}">Logout</a>
             </ul>
         </div>
     </div>
 </nav>
+
 <br>
 <br>
 <br>
 <br>
-<br>
-<br>
+
 <section>
-    <div class="forms">
-        <h3 id="FormHeader">Job Category</h3>
-        <p id="details">Edit Jobs in Master List</p>
-        <form id="appointment-form" th:action="@{/jobtypes/save}" th:object="${jobTypes}" method="post">
+    <div class="forms" >
+        <div> <h3 id="FormHeader"> Edit Appointment </h3> </div>
+
+        <form th:action="@{/appointment/update}" th:object="${booking}" method="post" >
             <div class="mb-3">
                 <label class="form-label">Country ID</label>
-                <input readonly="readonly" class="form-control"name="id" th:value="${jobTypes.id}">
+                <input readonly="readonly" class="form-control"name="id" th:value="${id}">
             </div>
             <div class="mb-3">
-                <label class="form-label">Enter Job Category</label>
-                <input type="text" class="form-control" name="name" th:value="${jobTypes.name}" required>
+                <label class="form-label">Date</label>
+                <input type="date" name="date" th:value="*{date}" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Time</label>
+                <input type="time" name="time" th:value="*{time}" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <tr>
+                    <label class="form-label">Country</label>
+                </tr>
+                <div class="mb-3">
+                <td>
+                    <select th:field="*{country}" name="country" class="form-control" required>
+                        <th:block th:each="con : ${listCountries}" >
+                        <option th:text="${con.name}" th:value="${con.id}" />
+                        </th:block>
+                    </select>
+                </td>
+            </div>
+                <div class="mb-3">
+                    <tr>
+                        <label class="form-label">Jobs</label>
+                    </tr>
+                    <div class="mb-3">
+                        <td>
+                            <select th:field="*{jobTypes}" class="form-control" name="jobTypes" required>
+                                <th:block th:each="job : ${listJobs}" >
+                                    <option th:text="${job.name}" th:value="${job.id}" />
+                                </th:block>
+                            </select>
+                        </td>
+                    </div>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
-            <button type="reset" class="btn btn-secondary">Clear</button>
+            </div>
         </form>
-    </div>
+        </div>
 </section>
-<br>
-<br>
-<br>
+
+
 <br>
 <br>
 <br>
@@ -86,6 +112,5 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
         crossorigin="anonymous"></script>
-
 </body>
 </html>

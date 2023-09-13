@@ -25,4 +25,9 @@ public class UserService{
     public void deleteById(int id) {
         repo.deleteById(id);
     }
+
+    public User findByEmail(String email){
+        User user = repo.findByEmail(email);
+        return user;
+    }
 }

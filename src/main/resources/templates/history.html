@@ -49,8 +49,9 @@
         </div>
     </div>
 </nav>
+
 <br>
-<article>
+<br>
 <div class="container mt-4">
     <h1>Appointment Details</h1>
     <br>
@@ -59,7 +60,9 @@
     <div class="mb-3">
         <input type="text" id="searchInput" class="form-control" placeholder="Search">
     </div>
-
+    <br>
+    <br>
+    <!--<a th:href="@{/generatePdf}">Generate Report</a>-->
     <!-- Data Table -->
     <table class="table table-striped">
         <thead>
@@ -75,22 +78,31 @@
         <tbody>
         <th:block th:each="booking : ${listAppointments}" >
         <tr>
-            <td>[[${booking.id}]]</td>
-            <td>[[${booking.date}]]</td>
-            <td>[[${booking.time}]]</td>
-            <td>[[${booking.country.name}]]</td>
-            <td>[[${booking.jobTypes.names}]]</td>
+            <td th:text="${booking.id}"></td>
+            <td th:text="${booking.date}"></td>
+            <td th:text="${booking.time}"></td>
+            <td th:text="${booking.country.name}"></td>
+            <td th:text="${booking.jobTypes.name}"></td>
             <td>
-                <a th:href="@{'/history/edit/' + ${booking.id}}">Edit</a>
-                <a th:href="@{'/history/edit/' + ${booking.id}}">Delete</a>
+                <a th:href="@{/editAppointment/{id}(id=${booking.id})}">Edit</a>
+                <a th:href="@{/deleteAppointmentList/{id}(id=${booking.id})}">Delete</a>
             </td>
         </tr>
         </th:block>
         </tbody>
     </table>
 </div>
-</article>
-
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 <!-- JavaScript for search and update functionality -->
 <script>
     // Function to filter table rows based on search input

@@ -39,18 +39,15 @@
 <article>
 <section>
     <div class="forms" >
-       <div th:if="${booking.id == null}" > <h3 id="FormHeader">Appointment</h3> </div>
-        <div th:unless="${booking.id == null}" > <h3 id="FormHeader"> Edit Appointment</h3> </div>
-
+        <div> <h3 id="FormHeader">Appointment</h3> </div>
         <form th:action="@{/appointment/save}" th:object="${booking}" method="post" >
-            <input type="hidden" th:field="*{id}" th:value="${booking.id}"/>
             <div class="mb-3">
                 <label class="form-label">Date</label>
-                <input type="date" th:field="*{date}" class="form-control" required>
+                <input type="date" class="form-control" name="date" required>
             </div>
             <div class="mb-3">
                 <label class="form-label">Time</label>
-                <input type="time" th:field="*{time}" class="form-control" required>
+                <input type="time" class="form-control" name="time" required>
             </div>
             <div class="mb-3">
                 <tr>
@@ -71,7 +68,7 @@
                     </tr>
                     <div class="mb-3">
                         <td>
-                            <select th:field="*{jobs}" class="form-control" required>
+                            <select th:field="*{jobTypes}" class="form-control" required>
                                 <th:block th:each="job : ${listJobs}" >
                                     <option th:text="${job.name}" th:value="${job.id}" />
                                 </th:block>
