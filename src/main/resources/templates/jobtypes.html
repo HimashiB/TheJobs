@@ -28,19 +28,10 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" th:href="@{/userHome}">Profile</a>
+                    <a class="nav-link active" aria-current="page" th:href="@{/adminHome}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{/appointments}">Appointments</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" th:href="@{/history}">History</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" th:href="@{/jobtypes}">Jobs</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" th:href="@{/country}">Country</a>
+                    <a class="nav-link" th:href="@{/history}">Settings</a>
                 </li>
                 <a class="nav-link" th:href="@{/Logout}">Logout</a>
             </ul>
@@ -50,12 +41,12 @@
 
 <section>
     <div class="forms">
-        <h3 id="FormHeader">Jobs</h3>
+        <h3 id="FormHeader">Job Category</h3>
         <p id="details">Add Job Categories to Master List</p>
-        <form id="appointment-form" th:action="@{/jobtypes/save}" th:object="${jobtypes}" method="post" >
+        <form id="appointment-form" th:action="@{/jobtypes/save}" method="post" >
             <div class="mb-3">
                 <label class="form-label">Enter Job Category</label>
-                <input type="text" th:field="*{names}" class="form-control" required>
+                <input type="text" class="form-control"  name="name" required>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
             <button type="reset" class="btn btn-secondary">Clear</button>

@@ -22,13 +22,12 @@ public class Booking {
     private String time;
 
     @ManyToOne
-    @JoinColumn(name = "country_id", nullable = false)
+    @JoinColumn(name = "country_id",nullable = false)
     private Country country;
 
     @ManyToOne
     @JoinColumn(name = "job_id", nullable = false)
     private JobTypes jobTypes;
-
 
     public Integer getId() {
         return id;
@@ -69,5 +68,4 @@ public class Booking {
     public void setJobTypes(JobTypes jobTypes) {
         this.jobTypes = jobTypes;
     }
-
 }

@@ -3,6 +3,7 @@
 <html lang="en" xmlns:th="https://www.thymeleaf.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="https://www.thymeleaf.org">
 <head>
+    <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="../static/css/styles.css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -28,19 +29,10 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" th:href="@{/userHome}">Profile</a>
+                    <a class="nav-link active" aria-current="page" th:href="@{/adminHome}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{/appointments}">Appointments</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" th:href="@{/history}">History</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" th:href="@{/jobtypes}">Jobs</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" th:href="@{/country}">Country</a>
+                    <a class="nav-link" th:href="@{/history}">Settings</a>
                 </li>
                 <a class="nav-link" th:href="@{/Logout}">Logout</a>
             </ul>
@@ -52,10 +44,10 @@
     <div class="forms">
         <h3 id="FormHeader">Countries</h3>
         <p id="details">Add Countries to Master List</p>
-        <form id="appointment-form" th:action="@{/country/save}" th:object="${country}" method="post" >
+        <form id="appointment-form" th:action="@{/country/save}"  method="post" >
             <div class="mb-3">
                 <label class="form-label">Enter Country Name</label>
-                <input type="text" th:field="*{name}" class="form-control" required>
+                <input type="text" class="form-control" name="name" required>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
             <button type="reset" class="btn btn-secondary">Clear</button>

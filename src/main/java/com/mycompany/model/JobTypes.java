@@ -3,14 +3,16 @@ package com.mycompany.model;
 import jakarta.persistence.*;
 
 @Entity
+@Table(name = "job_types")
 public class JobTypes {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(length = 120,nullable = false,unique = true )
-    private String names;
+    @Column(length = 250,unique = true )
+    private String name;
+
 
     public JobTypes() {
     }
@@ -23,13 +25,12 @@ public class JobTypes {
         this.id = id;
     }
 
-    public String getNames() {
-        return names;
+    public String getName() {
+        return name;
     }
 
-    public void setNames(String names) {
-        this.names = names;
+    public void setName(String name) {
+        this.name = name;
     }
-
 }
 

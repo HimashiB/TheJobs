@@ -22,7 +22,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" th:href="@{/userHome}">Profile</a>
+                    <a class="nav-link active" aria-current="page" th:href="@{/adminHome}">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" th:href="@{/appointment}">Appointments</a>
@@ -30,16 +30,20 @@
                 <li class="nav-item">
                     <a class="nav-link" th:href="@{/history}">History</a>
                 </li>
-                <a class="nav-link" th:href="@{/Logout}">Jobs</a>
+                <a class="nav-link" th:href="@{/Logout}">Logout</a>
             </ul>
         </div>
     </div>
 </nav>
 
+<article>
 <section>
     <div class="forms" >
-        <h3 id="FormHeader">Appointment</h3>
+       <div th:if="${booking.id == null}" > <h3 id="FormHeader">Appointment</h3> </div>
+        <div th:unless="${booking.id == null}" > <h3 id="FormHeader"> Edit Appointment</h3> </div>
+
         <form th:action="@{/appointment/save}" th:object="${booking}" method="post" >
+            <input type="hidden" th:field="*{id}" th:value="${booking.id}"/>
             <div class="mb-3">
                 <label class="form-label">Date</label>
                 <input type="date" th:field="*{date}" class="form-control" required>
@@ -67,9 +71,9 @@
                     </tr>
                     <div class="mb-3">
                         <td>
-                            <select th:field="*{jobTypes}" class="form-control" required>
+                            <select th:field="*{jobs}" class="form-control" required>
                                 <th:block th:each="job : ${listJobs}" >
-                                    <option th:text="${job.names}" th:value="${job.id}" />
+                                    <option th:text="${job.name}" th:value="${job.id}" />
                                 </th:block>
                             </select>
                         </td>
@@ -80,9 +84,15 @@
         </form>
         </div>
 </section>
-
+</article>
+</body>
 <br>
-
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 <footer class="bg-dark text-white text-center py-3">
     <div class="container">
         <p>&copy; 2023 The Jobs. All rights reserved.</p>
@@ -98,6 +108,4 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
         crossorigin="anonymous"></script>
-
-</body>
 </html>

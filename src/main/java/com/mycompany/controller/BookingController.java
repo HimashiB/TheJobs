@@ -20,7 +20,7 @@ import java.util.Optional;
 public class BookingController {
 
     @Autowired
-    private BookingRepository repo;
+    private BookingRepository bookrepo;
 
     @Autowired
     CountryRepository countryrepo;
@@ -32,38 +32,42 @@ public class BookingController {
     @GetMapping("/appointment")
     public String showAppointmentPage(Model model){
         List<Country>listCountries= countryrepo.findAll();
-        model.addAttribute("booking", new Booking());
         model.addAttribute("listCountries",listCountries);
+
         List<JobTypes>listJobs = jobrepo.findAll();
-        model.addAttribute("booking", new Booking());
         model.addAttribute("listJobs", listJobs);
 
+        model.addAttribute("booking", new Booking());
         return "appointment";
     }
 
     @GetMapping("/history")
     public String appointmentHistory(Model model){
-        List<Booking> listAppointments = (List<Booking>) repo.findAll();
+        List<Booking> listAppointments = bookrepo.findAll();
         model.addAttribute("listAppointments", listAppointments);
         return "history";
     }
 
     @PostMapping("/appointment/save")
     public String saveBooking(Booking booking){
-        repo.save(booking);
+        bookrepo.save(booking);
         return "redirect:/history";
     }
 
     @GetMapping("history/edit/{id}")
     public String showEditAppForm(@PathVariable("id") Integer id, Model model){
-        System.out.println("This is the id" + id);
-        Optional<Booking> bookingOptional = repo.findById(id);
-        model.addAttribute("booking", bookingOptional.get());
-        System.out.println("Booking Country" + bookingOptional);
-        model.addAttribute("listCountries", countryrepo.findAll());
-        model.addAttribute("listJobs", jobrepo.findAll());
-        /*LocalDate bookingDate = bookingOptional.get().getDate();
-        model.addAttribute("date", bookingDate);*/
+        Booking booking = bookrepo.findById(id).get();
+        model.addAttribute("booking", booking);
+
+        List<Country>listCountries= countryrepo.findAll();
+        model.addAttribute("listCountries",listCountries);
+
+        List<JobTypes>listJobs = jobrepo.findAll();
+        model.addAttribute("listJobs", listJobs);
+
+        model.addAttribute("booking", new Booking());
+
         return "appointment";
     }
+
 }
