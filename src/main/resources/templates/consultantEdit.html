@@ -1,0 +1,87 @@
+<!doctype html>
+<!--suppress ALL -->
+<html lang="en" xmlns:th="https://www.thymeleaf.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="https://www.thymeleaf.org">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/css/staff.css}">
+    <title>Registration</title>
+
+</head>
+<body id="regPage">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+
+    <div class="container">
+        <a class="navbar-brand" th:href="@{/index}">The Jobs</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" th:href="@{/adminHome}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/history}">Settings</a>
+                </li>
+                <a class="nav-link" th:href="@{/Logout}">Logout</a>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<br>
+<br>
+<br>
+<br>
+<section class="main">
+    <h3 id="FormHeader">Edit Administrator</h3>
+    <form class="form" method="post" th:action="@{/consultantRegister/save}" th:object="${consultant}">
+        <div class="mb-3">
+            <label class="form-label">Admin ID</label>
+            <input readonly="readonly" class="form-control"name="id" th:value="${consultant.id}">
+        </div>
+        <div class="input-box">
+            <label>First Name</label>
+            <input type="text" th:value="*{firstName}" placeholder="Enter first name"  class="form-control" name="firstName" required minlength="2" maxlength="45" />
+        </div>
+        <div class="input-box">
+            <label>Last Name</label>
+            <input type="text" th:value="*{lastName}" placeholder="Enter last name"   class="form-control" name="lastName" required minlength="2" maxlength="45" />
+        </div>
+        <div class="input-box">
+            <label>Email Address</label>
+            <input type="email" th:value="*{email}" placeholder="Enter email address"  class="form-control" name="email" required minlength="5" maxlength="50" />
+        </div>
+        <div class="button-container">
+            <button type="submit" class="btn btn-primary">Update</button>
+            <button type="reset" class="btn btn-secondary">Clear</button>
+        </div>
+    </form>
+</section>
+
+</body>
+<br>
+<br>
+<br>
+<br>
+
+<footer class="bg-dark text-white text-center py-3">
+    <div class="container">
+        <p>&copy; 2023 The Jobs. All rights reserved.</p>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+</html>

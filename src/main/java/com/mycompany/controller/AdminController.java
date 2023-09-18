@@ -47,13 +47,13 @@ public class AdminController {
     }
 
     @RequestMapping("/deleteAdminList/{id}")
-    public String deleteCountryList(@PathVariable("id") int id){
+    public String deleteAdminList(@PathVariable("id") int id){
         adminService.deleteById(id);
         return "redirect:/adminList";
     }
 
     @RequestMapping("/editAdmin/{id}")
-    public String editCountry(@PathVariable("id") int id, Model model){
+    public String editAdmin(@PathVariable("id") int id, Model model){
         Admin admin = adminService.getAdminById(id);
         model.addAttribute("admin", admin);
         return "adminEdit";
