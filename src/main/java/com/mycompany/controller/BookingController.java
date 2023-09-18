@@ -78,22 +78,5 @@ public class BookingController {
         return "redirect:/history";
     }
 
-    /*
-
-    @GetMapping("history/edit/{id}")
-    public String showEditAppForm(@PathVariable("id") Integer id, Model model){
-        Booking booking = bookrepo.findById(id).get();
-        model.addAttribute("booking", booking);
-
-        List<Country>listCountries= countryrepo.findAll();
-        model.addAttribute("listCountries",listCountries);
-
-        List<JobTypes>listJobs = jobrepo.findAll();
-        model.addAttribute("listJobs", listJobs);
-
-        model.addAttribute("booking", new Booking());
-
-        return "appointment";
-    }*/
 
 }
