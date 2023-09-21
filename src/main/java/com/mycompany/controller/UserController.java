@@ -2,8 +2,13 @@ package com.mycompany.controller;
 
 
 import com.mycompany.model.Booking;
+import com.mycompany.model.Country;
+import com.mycompany.model.JobTypes;
 import com.mycompany.model.User;
 import com.mycompany.repository.UserRepository;
+import com.mycompany.service.AppointmentService;
+import com.mycompany.service.CountryService;
+import com.mycompany.service.JobService;
 import com.mycompany.service.UserService;
 import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,11 +23,24 @@ import java.util.List;
 public class UserController {
 
     @Autowired
+    AppointmentService appService;
+
+    @Autowired
+    CountryService countryService;
+
+    @Autowired
+    JobService jobService;
+
+    @Autowired
     private UserService service;
 
     @Autowired
     private UserRepository userRepository;
 
+    @GetMapping("/userHome")
+    public String showUserHome() {
+        return "userHome";
+    }
 
     @GetMapping("/register")
     public String showRegistrationForm(Model model) {
@@ -49,7 +67,7 @@ public class UserController {
         User dbUser = userRepository.findByEmail(email);
         boolean isPasswordMatch = BCrypt.checkpw(password, dbUser.getPassword());
         if (isPasswordMatch)
-            return "redirect:/adminHome";
+            return "redirect:/userHome";
         else
             return "redirect:/login";
     }
@@ -67,7 +85,28 @@ public class UserController {
         return "redirect:/UserHistory";
     }
 
+    @GetMapping("/userAppointment")
+    public String showUserAppointment(Model model){
+        List<Country>listCountries= countryService.getAllCountries();
+        model.addAttribute("listCountries",listCountries);
+        List<JobTypes>listJobs = jobService.getAllJobs();
+        model.addAttribute("listJobs", listJobs);
+        Booking booking = new Booking();
+        model.addAttribute("booking", new Booking());
+        return "userAppointment";
+    }
 
+    @PostMapping("/userAppointment/save")
+    public String saveUserAppointment(@ModelAttribute Booking booking){
+        appService.save(booking);
+        return "redirect:/userBooking";
+    }
+
+    @GetMapping("/userBooking")
+    public ModelAndView getAllBooking(){
+        List<Booking> userBooking = appService.getAllBooking();
+        return new ModelAndView("userBooking","userBooking",userBooking);
+    }
 }
 
 

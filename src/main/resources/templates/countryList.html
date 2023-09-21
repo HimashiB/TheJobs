@@ -4,10 +4,10 @@
       xsi:schemaLocation="https://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="../static/css/styles.css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
     <title>The Jobs</title>
 
@@ -30,20 +30,27 @@
                     <a class="nav-link active" aria-current="page" th:href="@{/adminHome}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{/history}">Settings</a>
+                    <button type="button" class="btn btn-dark" id="logoutBtn">Logout</button>
                 </li>
-                <a class="nav-link" th:href="@{/Logout}">Logout</a>
             </ul>
         </div>
     </div>
 </nav>
 
+<br>
 
+<section>
+    <div class="container">
+        <a href="/country/export/csv"> <i class="fas fa-file-csv fa-2x btn btn-primary"></i> </a>
+        <a href="/country/export/pdf"> <i class="fas fa-file-pdf fa-2x btn btn-primary"></i> </a>
+        <a href="/country"> <i class="fas fa-plus fa-2x btn btn-primary"></i> </a>
+    </div>
+
+</section>
 <article>
     <div class="container mt-4">
         <h1>Country Master List</h1>
         <br>
-
         <!-- Search Input -->
         <div class="mb-3">
             <input type="text" id="searchInput" class="form-control" placeholder="Search">
@@ -74,7 +81,6 @@
 </div>
 </article>
 
-<!-- JavaScript for search and update functionality -->
 <script>
     // Function to filter table rows based on search input
     function filterTable() {
@@ -107,27 +113,23 @@
     // Add event listener for the search input
     document.getElementById("searchInput").addEventListener("keyup", filterTable);
 
-    // Update function for the "Update" button
-    document.getElementById("saveChanges").addEventListener("click", function() {
-        // Retrieve the updated values and perform the update logic here
-        alert("Changes saved!");
-        $('#updateModal').modal('hide'); // Hide the modal
-    });
 </script>
 
 <br>
 <br>
 <br>
-
+<br>
+<br>
+<br>
+<br>
 <footer class="bg-dark text-white text-center py-3">
     <div class="container">
         <p>&copy; 2023 The Jobs. All rights reserved.</p>
     </div>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
+<script type="text/javascript" th:src="@{/js/logout.js}"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
         integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
         crossorigin="anonymous"></script>

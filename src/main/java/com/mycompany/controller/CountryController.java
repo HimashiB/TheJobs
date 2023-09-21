@@ -48,4 +48,11 @@ public class CountryController {
         model.addAttribute("country", country);
         return "countryEdit";
     }
+
+    @GetMapping("/api/countries")
+    @ResponseBody
+    public List<Country> getAllCountriesJson() {
+        return countryService.getAllCountries();
+    }
+
 }
