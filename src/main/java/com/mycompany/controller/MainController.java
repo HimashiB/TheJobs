@@ -21,4 +21,8 @@ public class MainController {
         return "browse";
     }
 
+    @GetMapping("/contact")
+    public String showContactPage() {
+        return "contact";
+    }
 }
