@@ -16,9 +16,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
-
+import com.mycompany.ExceptionHandler.IncorrectPasswordException;
+import com.mycompany.ExceptionHandler.UserNotFoundException;
 import java.util.List;
 
+@SuppressWarnings("unused")
 @Controller
 public class UserController {
 
@@ -34,8 +36,6 @@ public class UserController {
     @Autowired
     private UserService service;
 
-    @Autowired
-    private UserRepository userRepository;
 
     @GetMapping("/userHome")
     public String showUserHome() {
@@ -63,14 +63,25 @@ public class UserController {
     }
 
     @PostMapping("/loginpage")
-    public String loginProcess(@RequestParam("email") String email, @RequestParam("password") String password) {
-        User dbUser = userRepository.findByEmail(email);
-        boolean isPasswordMatch = BCrypt.checkpw(password, dbUser.getPassword());
-        if (isPasswordMatch)
-            return "redirect:/userHome";
-        else
-            return "redirect:/login";
+    public String loginProcess(@RequestParam("email") String email, @RequestParam("password") String password, Model model) {
+        try {
+            User dbUser = service.findByEmail(email);
+            if (dbUser == null) {
+                throw new UserNotFoundException();
+            }
+
+            boolean isPasswordMatch = BCrypt.checkpw(password, dbUser.getPassword());
+            if (isPasswordMatch) {
+                return "redirect:/userHome";
+            } else {
+                throw new IncorrectPasswordException();
+            }
+        } catch (UserNotFoundException | IncorrectPasswordException e) {
+            model.addAttribute("errorMessage", e.getMessage());
+            return "login";
+        }
     }
+
 
 
     @GetMapping("/UserHistory")

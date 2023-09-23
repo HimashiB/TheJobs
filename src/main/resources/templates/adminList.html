@@ -10,16 +10,24 @@
     <title>The Jobs</title>
 
     <style>
-        /* Optional CSS styling */
-        .update-button {
-            padding: 2px 5px;
-            margin-right: 5px;
+        h1 {text-align: center;
         }
-        .delete-button {
-            padding: 2px 5px;
-            margin-right: 5px;
+
+        #page-container {
+            position: relative;
+            min-height: 100vh;
         }
-        h1 {text-align: center;}
+
+        #content-wrap {
+            padding-bottom: 2.5rem;
+        }
+
+        #footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 2.5rem;
+        }
     </style>
 
 </head>
@@ -47,7 +55,9 @@
 <br>
 <br>
 <br>
-<article>
+
+<div id="page-container">
+<div id="content-wrap">
 <div class="container mt-4">
     <h1>Administration Details</h1>
     <br>
@@ -84,9 +94,16 @@
         </tbody>
     </table>
 </div>
-</article>
+    </div>
 
-<!-- JavaScript for search and update functionality -->
+<footer id="footer" class="bg-dark text-white text-center py-3">
+    <div class="container">
+        <p>&copy; 2023 The Jobs. All rights reserved.</p>
+    </div>
+</footer>
+</div>
+
+<!-- JavaScript for search functionality -->
 <script>
     // Function to filter table rows based on search input
     function filterTable() {
@@ -115,28 +132,9 @@
             }
         }
     }
-
-    // Add event listener for the search input
     document.getElementById("searchInput").addEventListener("keyup", filterTable);
     ;
 </script>
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<footer class="bg-dark text-white text-center py-3">
-    <div class="container">
-        <p>&copy; 2023 The Jobs. All rights reserved.</p>
-    </div>
-</footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"

@@ -12,7 +12,24 @@
     <title>The Jobs</title>
 
     <style>
-        h1 {text-align: center;}
+        h1 {text-align: center;
+        }
+
+        #page-container {
+            position: relative;
+            min-height: 100vh;
+        }
+
+        #content-wrap {
+            padding-bottom: 2.5rem;
+        }
+
+        #footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 2.5rem;
+        }
     </style>
 </head>
 
@@ -38,7 +55,8 @@
 </nav>
 
 
-<article>
+<div id="page-container">
+<div id="content-wrap">
     <div class="container mt-4">
         <h1>Jobs Master List</h1>
         <br>
@@ -71,59 +89,48 @@
     </tbody>
 </table>
 </div>
-</article>
+</div>
 
-<!-- JavaScript for search and update functionality -->
-<script>
-    // Function to filter table rows based on search input
-    function filterTable() {
-        var input, filter, table, tr, td, i, txtValue;
-        input = document.getElementById("searchInput");
-        filter = input.value.toUpperCase();
-        table = document.querySelector("table");
-        tr = table.getElementsByTagName("tr");
-
-        for (i = 1; i < tr.length; i++) {
-            var matchFound = false;
-            for (var j = 0; j < 5; j++) {
-                td = tr[i].getElementsByTagName("td")[j];
-                if (td) {
-                    txtValue = td.textContent || td.innerText;
-                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                        matchFound = true;
-                        break; // Exit the inner loop if a match is found
-                    }
-                }
-            }
-            if (matchFound) {
-                tr[i].style.display = "";
-            } else {
-                tr[i].style.display = "none";
-            }
-        }
-    }
-
-    // Add event listener for the search input
-    document.getElementById("searchInput").addEventListener("keyup", filterTable);
-
-    // Update function for the "Update" button
-    document.getElementById("saveChanges").addEventListener("click", function() {
-        // Retrieve the updated values and perform the update logic here
-        alert("Changes saved!");
-        $('#updateModal').modal('hide'); // Hide the modal
-    });
-</script>
-
-<br>
-<br>
-<br>
-
-<footer class="bg-dark text-white text-center py-3">
+<footer id="footer" class="bg-dark text-white text-center py-3">
     <div class="container">
         <p>&copy; 2023 The Jobs. All rights reserved.</p>
     </div>
 </footer>
+</div>
 
+
+<!-- JavaScript for search functionality -->
+<script>
+// Function to filter table rows based on search input
+        function filterTable() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("searchInput");
+            filter = input.value.toUpperCase();
+            table = document.querySelector("table");
+            tr = table.getElementsByTagName("tr");
+
+            for (i = 1; i < tr.length; i++) {
+                var matchFound = false;
+                for (var j = 0; j < 5; j++) {
+                    td = tr[i].getElementsByTagName("td")[j];
+                    if (td) {
+                        txtValue = td.textContent || td.innerText;
+                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                            matchFound = true;
+                            break; // Exit the inner loop if a match is found
+                        }
+                    }
+                }
+                if (matchFound) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+        document.getElementById("searchInput").addEventListener("keyup", filterTable);
+
+</script>
 
 <script type="text/javascript" th:src="@{/js/logout.js}"></script>
 

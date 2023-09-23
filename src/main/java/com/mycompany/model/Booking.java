@@ -4,9 +4,12 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.regex.Pattern;
 
 
+@SuppressWarnings("ALL")
 @Entity
 public class Booking {
 
@@ -28,6 +31,7 @@ public class Booking {
     @ManyToOne
     @JoinColumn(name = "job_id", nullable = false)
     private JobTypes jobTypes;
+
 
     public Booking() {
     }
@@ -82,4 +86,5 @@ public class Booking {
                 ", jobTypes=" + jobTypes +
                 '}';
     }
+
 }

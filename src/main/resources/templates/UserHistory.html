@@ -10,16 +10,23 @@
     <title>The Jobs</title>
 
     <style>
-        /* Optional CSS styling */
-        .update-button {
-            padding: 2px 5px;
-            margin-right: 5px;
-        }
-        .delete-button {
-            padding: 2px 5px;
-            margin-right: 5px;
-        }
         h1 {text-align: center;}
+
+        #page-container {
+            position: relative;
+            min-height: 100vh;
+        }
+
+        #content-wrap {
+            padding-bottom: 2.5rem;
+        }
+
+        #footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 2.5rem;
+        }
     </style>
 
 </head>
@@ -45,8 +52,11 @@
         </div>
 </nav>
 <br>
-<article>
-<div class="container mt-4">
+
+
+<div id="page-container">
+<div id="content-wrap">
+    <div class="container mt-4">
     <h1>Job Seeker Details</h1>
     <br>
 
@@ -60,9 +70,9 @@
         <thead>
         <tr>
             <th>User ID</th>
-            <th>Email</th>
             <th>First Name</th>
             <th>Last Name</th>
+            <th>Email</th>
             <th>Action</th>
         </tr>
         </thead>
@@ -70,9 +80,9 @@
         <th:block th:each="u : ${users}" >
         <tr>
             <td th:text="${u.id}"></td>
-            <td th:text="${u.email}"></td>
             <td th:text="${u.firstName}"></td>
             <td th:text="${u.lastName}"></td>
+            <td th:text="${u.email}"></td>
             <td>
                 <a th:href="@{/deleteUserList/{id}(id=${u.id})}">Delete</a>
             </td>
@@ -81,9 +91,18 @@
         </tbody>
     </table>
 </div>
-</article>
+</div>
 
-<!-- JavaScript for search and update functionality -->
+
+<footer id="footer" class="bg-dark text-white text-center py-3">
+    <div class="container">
+        <p>&copy; 2023 The Jobs. All rights reserved.</p>
+    </div>
+</footer>
+</div>
+
+
+<!-- JavaScript for search functionality -->
 <script>
     // Function to filter table rows based on search input
     function filterTable() {
@@ -116,23 +135,7 @@
     // Add event listener for the search input
     document.getElementById("searchInput").addEventListener("keyup", filterTable);
 
-    // Update function for the "Update" button
-    document.getElementById("saveChanges").addEventListener("click", function() {
-        // Retrieve the updated values and perform the update logic here
-        alert("Changes saved!");
-        $('#updateModal').modal('hide'); // Hide the modal
-    });
 </script>
-
-<br>
-<br>
-<br>
-
-<footer class="bg-dark text-white text-center py-3">
-    <div class="container">
-        <p>&copy; 2023 The Jobs. All rights reserved.</p>
-    </div>
-</footer>
 
 <script type="text/javascript" th:src="@{/js/logout.js}"></script>
 
