@@ -17,6 +17,7 @@ public class JobTypes {
     public JobTypes() {
     }
 
+
     public Integer getId() {
         return id;
     }
