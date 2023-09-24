@@ -23,8 +23,8 @@ public class UserRepositoryTest {
     public void testAddUser(){
         User user = new User();
         user.setFirstName("Mary");
-        user.setLastName("Silva");
-        user.setEmail("marys@gmail.com");
+        user.setLastName("Peter");
+        user.setEmail("maryp@gmail.com");
         user.setPassword("mary");
 
         User saveUser = userRepository.save(user);
